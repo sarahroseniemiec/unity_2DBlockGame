@@ -2,18 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Difficulty : MonoBehaviour {
-	float difficulty;
-	// Use this for initialization
-	void Start () {
-		
+public static class Difficulty {
+	static float secondsToMaxDifficulty = 60;
+	public static float GetDifficultyPercent () {
+		return Mathf.Clamp01(Time.timeSinceLevelLoad / secondsToMaxDifficulty);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Time.time > 10) {
-//			speed += 1;
 
-		}
-	}
 }
